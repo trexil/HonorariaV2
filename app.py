@@ -43,7 +43,7 @@ def download_file():
     # create the result file for downloading
     if request.method == 'POST':
         if request.form['Download Result File'] == 'Download Result File':
-            return send_from_directory(app.config['UPLOAD_FOLDER'], 'c.xlsx')
+            return send_from_directory(app.config['UPLOAD_FOLDER'], '123.xlsx')
     # render the download page
     return render_template('download.html', a=a, b=b, c=c)
 

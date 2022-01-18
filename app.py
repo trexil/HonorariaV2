@@ -13,12 +13,12 @@ import os
 from pywebio import start_server
 import json
 import operator
-#import dns.resolver
+import dns.resolver
 import pymongo
 from pymongo import MongoClient
 
-#dns.resolver.default_resolver=dns.resolver.Resolver(configure=False)
-#dns.resolver.default_resolver.nameservers=['8.8.8.8']
+dns.resolver.default_resolver=dns.resolver.Resolver(configure=False)
+dns.resolver.default_resolver.nameservers=['8.8.8.8']
 
 client = pymongo.MongoClient("mongodb+srv://trexil:12345@cluster0.pj4z9.mongodb.net/Test?retryWrites=true&w=majority")
 db = client.test

@@ -83,6 +83,35 @@ list = collection.find_one()
 
 print(list['Report'])
 
+
+def main_menu():
+    with use_scope('menu_scope'):
+        response = actions('Select Module', ['Browse Data', 'Add New Thesis','Report', 'Close'])
+    return response
+
+def index(list):
+    response = main_menu()
+    while response != 'Close':
+        if response == 'Browse Data':
+            put_text(list['Report'])
+            #browse(jsonfile)
+        elif response == 'Add New Thesis':
+            write_json(jsonfile)
+        elif response == 'Report':
+            reportMenu(jsonfile)
+        response = main_menu()
+
+def main():
+    #startupCheck()
+    index(list)
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-p", "--port", type=int, default=8080)
+    args = parser.parse_args()
+    start_server(main, debug=True, port=args.port)
+
+
 '''
 def startupCheck():
     Thesis = {

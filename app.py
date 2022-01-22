@@ -102,6 +102,7 @@ def index():
         response = main_menu()
 
 def reset(collection):
+    
     Thesis = {
         'Thesis': [
         ],
@@ -153,9 +154,19 @@ def reset(collection):
             },
         ]
     }
-    collection.drop()
-    collection.insert_one(Thesis)
-    main_menu()
+    with popup('Reset'):
+        data = input_group("Are you sure you want to erase all data?", [
+            actions('actions', [
+                {'label': 'Yes', 'value': 'Yes', 'color':'danger'},
+                {'label': 'No', 'value': 'No', 'type': 'reset'},
+            ], name='action', help_text='actions'),
+        ])
+        if data['action'] == 'Yes':
+            collection.drop()
+            collection.insert_one(Thesis)
+            main_menu()
+        if data['action'] == 'No'
+            main_menu()
 
 
 def main_menu():

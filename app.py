@@ -160,12 +160,12 @@ def reset(collection):
             {'label': 'No', 'value': 'No', 'type': 'reset'},
             ], name='action', ),
         ])
-        if data['action'] == 'Yes':
-            collection.drop()
-            collection.insert_one(Thesis)
-            main_menu()
-        if data['action'] == 'No':
-            main_menu()
+    if data['action'] == 'Yes':
+        collection.drop()
+        collection.insert_one(Thesis)
+        main_menu()
+    if data['action'] == 'No':
+        main_menu()
 
 
 def main_menu():

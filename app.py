@@ -165,7 +165,7 @@ def reset(collection):
             collection.drop()
             collection.insert_one(Thesis)
             main_menu()
-        if data['action'] == 'No'
+        if data['action'] == 'No':
             main_menu()
 
 

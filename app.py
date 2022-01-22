@@ -154,12 +154,11 @@ def reset(collection):
             },
         ]
     }
-    with popup('Reset'):
-        data = input_group("Are you sure you want to erase all data?", [
-            actions('actions', [
-                {'label': 'Yes', 'value': 'Yes', 'color':'danger'},
-                {'label': 'No', 'value': 'No', 'type': 'reset'},
-            ], name='action', help_text='actions'),
+    data = input_group("Are you sure you want to erase all data?", [
+        actions(' ', [
+            {'label': 'Yes', 'value': 'Yes', 'color':'danger'},
+            {'label': 'No', 'value': 'No', 'type': 'reset'},
+            ], name='action', ),
         ])
         if data['action'] == 'Yes':
             collection.drop()

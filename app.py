@@ -157,7 +157,7 @@ def reset(collection):
     data = input_group("Are you sure you want to erase all data?", [
         actions(' ', [
             {'label': 'Yes', 'value': 'Yes', 'color':'danger'},
-            {'label': 'No', 'value': 'No', 'type': 'reset'},
+            {'label': 'No', 'value': 'No'},
             ], name='action', ),
         ])
     if data['action'] == 'Yes':
